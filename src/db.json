@@ -1,9 +1,1 @@
-{
-  "users": [
-    {
-      "id": "29fbab25-d3a5-48d1-886e-a7d848e8c91a",
-      "name": "Debora Sousa",
-      "email": "debora@gmail.com"
-    }
-  ]
-}
+{"users":[{"id":"29fbab25-d3a5-48d1-886e-a7d848e8c91a","name":"Debora Sousa","email":"debora@gmail.com"},{"id":"ad303174-5d06-433f-9bee-666e9409f953","name":"Debora Sousa","email":"debora@gmail.com"}]}
