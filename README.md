@@ -55,3 +55,5 @@ OBS: o JS é originalmente projetado para lidar com strings e não dados binári
 
 # Banco de Dados
 Criar e popular os dados em um arquivo físico **database.js**
+
+### Persistir os dados no arquivo

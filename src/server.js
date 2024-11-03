@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto'
 import http from 'node:http'
 import { Database } from './database.js'
 import { json } from './middlewares/json.js'
@@ -21,7 +22,7 @@ if (method === 'POST' && url === '/users') {
   const {name, email} = req.body
 
   const user = {
-    id: 1,
+    id: randomUUID(),
     name: "Debora Sousa",
     email:"debora@gmail.com", 
   }
