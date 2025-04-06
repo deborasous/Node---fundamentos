@@ -5,9 +5,10 @@ const databasePath= new URL('db.json', import.meta.url)
 
 export class Database{
   #database ={}
+  #ready
 
   constructor(){
-    fs.readFile(databasePath, 'utf8')
+    this.#ready = fs.readFile(databasePath, 'utf8')
       .then(data => {
         this.#database=JSON.parse(data)
       })
@@ -17,16 +18,21 @@ export class Database{
       })
   }
 
+  async ready() {
+    await this.#ready
+  }
+
   #persist(){
-    fs.writeFile(databasePath, JSON.stringify(this.#database))
+    return fs.writeFile(databasePath, JSON.stringify(this.#database, null, 2))
   } 
 
-  //método select que recebe a tabela que deseja selecionar
+  //método select que recebe a tabela que deseja selecionar ou um objeto vazio
   select(table){
     const data= this.#database[table] ?? []
 
     return data
   }
+
   //metodo insert que recebe a tabela e os dados que deseja fazer a inserção
   insert(table, data){
     if (Array.isArray(this.#database[table])) {
@@ -36,7 +42,22 @@ export class Database{
     }
 
     this.#persist()
-
     return data
+  }
+
+  delete(table, id){
+    if (!Array.isArray(this.#database[table])) {
+      return false;
+    }
+
+    const index = this.#database[table].findIndex(item => item.id === id);
+    if(index === -1){
+      return false;
+    }
+
+    this.#database[table].splice(index, 1);
+    this.#persist();
+
+    return true;
   }
 }

@@ -1,1 +1,29 @@
-{"users":[{"id":"29fbab25-d3a5-48d1-886e-a7d848e8c91a","name":"Debora Sousa","email":"debora@gmail.com"},{"id":"ad303174-5d06-433f-9bee-666e9409f953","name":"Debora Sousa","email":"debora@gmail.com"}]}
+{
+  "users": [
+    {
+      "id": "e98dac2b-9288-4c7f-80f4-8590e8c60c16",
+      "name": "Lucas Moreti",
+      "email": "moreti@gmail.com"
+    },
+    {
+      "id": "23270e9c-d2cd-44fb-a712-934ad3313ceb",
+      "name": "Maria Moreti",
+      "email": "mary@gmail.com"
+    },
+    {
+      "id": "f99a499b-87bc-41f1-99ae-ab5de1c9d09c",
+      "name": "Catia Da Maceno",
+      "email": "catia@gmail.com"
+    },
+    {
+      "id": "2b704078-1a75-4744-bdcd-92bf5c5e25a5",
+      "name": "Patricia Da Maceno",
+      "email": "pat@gmail.com"
+    },
+    {
+      "id": "2d36915c-e15b-4c8f-89f9-ec1f9c9d2bd3",
+      "name": "Maria Eduarda",
+      "email": "duda@gmail.com"
+    }
+  ]
+}
