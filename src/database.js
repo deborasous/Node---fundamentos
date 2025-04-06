@@ -60,4 +60,20 @@ export class Database{
 
     return true;
   }
+
+  update(table, id, data) {
+    const rowIndex = this.#database[table]?.findIndex(item => item.id === id);
+
+    if (rowIndex === undefined || rowIndex < 0) {
+      return false
+    }
+
+    this.#database[table][rowIndex] = {
+      ...this.#database[table][rowIndex],
+      ...data,
+    };
+
+    this.#persist();
+    return true;
+  }
 }

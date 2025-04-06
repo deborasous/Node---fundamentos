@@ -24,7 +24,11 @@ export function buildRoutes(database){
           email, 
         }
 
-        database.insert('users', user)
+        const created = database.insert('users', user)
+
+        if (created) {
+          return res.writeHead(201).end('Usuário criado com sucesso!')
+        }
 
         return res.writeHead(201).end()
       }
@@ -34,8 +38,32 @@ export function buildRoutes(database){
       path: buildRoutePath('/users/:id'),
       handler:(req, res)=>{
         const {id}=req.params;
-        database.delete('users', id)
+
+        const deleted = database.delete('users', id)
+
+        if (!deleted) {
+          return res.writeHead(404).end('Usuário não encontrado.')
+        }
         
+        return res.writeHead(204).end(id)
+      }
+    },
+    {
+      method: 'PUT',
+      path: buildRoutePath('/users/:id'),
+      handler:(req, res) => {
+        const {id} = req.params;
+        const {name, email} = req.body
+
+        const success = database.update('users', id,{
+          name,
+          email,
+        });
+
+        if (!success) {
+          return res.writeHead(404).end('Usuário não encontrado.')
+        }
+
         return res.writeHead(204).end(id)
       }
     }

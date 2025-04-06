@@ -78,7 +78,7 @@ Criar e popular os dados em um arquivo físico **database.js**
   URL chamada: https://meusite.com/usuarios/45/posts/789
 
 3 - **Request Body:** 
-  São dados sensíveis ou complexos passados para o servidor por navegador ou aplicativo, sem passar na URL da aplicação. 
+  São dados sensíveis ou complexo, passados para o servidor por navegador ou aplicativo, sem passar na URL da aplicação. 
   Os dados podem ser enviados em varios formatos como JSON, XML, texto simples ou até arquivos binários.
   O cabeçalho **Content-Type** é importante, pois define o formato dos dados a serem enviados. Por exemplo, application/json para JSON ou multipart/form-data para upload de arquivos.
 
@@ -86,7 +86,6 @@ Criar e popular os dados em um arquivo físico **database.js**
   POST /usuarios HTTP/1.1
   Host: api.meusite.com
   Content-Type: application/json
-
   {
     "nome": "João Silva",
     "email": "joao@example.com",
